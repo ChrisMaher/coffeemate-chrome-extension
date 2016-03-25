@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html ng-app="Coffee" ng-csp>
+<head>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/lib/jquery-1.8.2.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+
+    <script src="js/app/app.js"></script>
+    <script src="js/app/popup.js"></script>
+
+
+
+</head>
+<body class="popup">
+
+<div ng-controller="PageController">
+
+    <div class="container">
+
+        <section>
+
+            <ul>
+
+             <li class="top-li">
+
+
+                <span></span>
+
+
+                <img class="logo" src="http://coffeemate.club/modules/core/client/img/coffee-mate-logo.png"
+                     alt="{{coffee.user.username}}"/>
+
+
+                <!--<a class="i18n title"><span class="shortcut"></span><span class="title-text">{{coffee.title}}</span>-->
+                    <!--<b>(€{{coffee.price}})</b></a> </br>-->
+
+
+                <span></span>
+
+
+
+
+
+            </li>
+
+            <div ng-repeat="coffee in coffees | limitTo:30 | orderBy : '-created'">
+
+                <li>
+
+
+                    <span></span>
+
+
+                    <img ng-src="{{coffee.urlimage}}" class="small-profile-image-thumbnail"
+                         alt="{{coffee.user.username}}"/>
+
+                    <a href="http://www.coffeemate.club/coffees/{{coffee._id}}" target="_blank" class="i18n title"><span class="shortcut"></span><span class="title-text">{{coffee.title}}</span>
+                        <b>(€{{coffee.price}})</b></a> </br>
+
+
+                    <span></span>
+
+
+
+
+
+                </li>
+
+            </div>
+
+            </ul>
+
+        </section>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>
